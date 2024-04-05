@@ -1,0 +1,33 @@
+
+<div class="container col-6">
+    <form [formGroup]="addMember" (ngSubmit)="onSubmit()">
+        <div class="mb-3">
+            <label for="exampleInputName" class="form-label">Name</label>
+            <input type="text" class="form-control" id="exampleInputName" aria-describedby="emailHelp" formControlName="name">
+            <span style="color: red" *ngIf="name && name.invalid && name.touched">College Name should not be empty</span>
+        </div>
+
+        <div class="mb-3">
+            <label for="exampleInputName" class="form-label">Leader Name</label>
+            <input type="text" class="form-control" id="exampleInputName" aria-describedby="emailHelp" formControlName="leader_name">
+            <span style="color: red" *ngIf="leader && leader.invalid && leader.touched">Contigent Leader Name field should not be empty</span>
+        </div>
+
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Email</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" formControlName="email">
+            <span style="color: red" *ngIf="email && email.touched && email.invalid
+            ">Enter correct email</span>
+        </div>
+
+        <div class="mb-3">
+            <label for="exampleInputPhone" class="form-label">Phone No.</label>
+            <input type="text" class="form-control" id="exampleInputPhone" aria-describedby="emailHelp" formControlName="phone">
+            <span style="color: red" *ngIf="phone && phone.invalid && phone.touched">phone no. should be 10 digit</span>
+        </div>
+       
+        <button type="submit" class="btn btn-primary">Submit</button>
+    
+        
+    </form>
+</div>

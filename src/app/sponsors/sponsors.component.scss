@@ -1,0 +1,186 @@
+
+.sponsors{
+  background: #031626;
+  background-image: url("./../../assets/sponsors-bg.png");
+  background-repeat: no-repeat;
+  background-size: 100% ;
+  color: white;
+}
+.container {
+  padding-top: 40px;
+}
+.heading {
+  // font-size: 250%;
+  font-weight: 250%;
+  text-transform: uppercase;
+  text-decoration: underline;
+
+}
+
+
+a {
+  color: white;
+}
+
+.sub-heading {
+  margin-top: 5%;
+  font-size: 220%;
+}
+
+.name {
+  margin-top: 20px;
+  font-weight: 300%;
+  padding-bottom: 5%;
+
+
+}
+.name2{
+
+  margin-top: 20px;
+  font-weight: 200%;
+  // font-size: 170%;
+  padding-bottom: 5%;
+  
+
+}
+
+.sponsors-list{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+
+.socials{
+  display: flex;
+  justify-content: space-around;
+  width: 20%;
+  margin: auto;
+}
+
+.socials2{
+  display: flex;
+  justify-content: space-around;
+  width: 40%;
+  margin: auto;
+}
+
+.icons {
+  font-size: 30px;
+}
+
+.designation {
+  margin-top: 7px;
+  font-size: 130%;
+  font-style: italic;
+  margin-bottom: 15px;
+}
+.team{
+    /* // border: 5px solid blue; */
+   margin: auto;
+    /* width: 30vw; */
+    /* height: 90%; */
+  }
+  .sponsor-pic{
+    /* display: block; */
+    // margin-left: auto;
+    // margin-right: auto;
+    // width: 25vw;
+    // height: 10vw;
+
+    // height: 20vw;
+    object-fit: contain;
+  }
+  .sponsor-pic-head{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    // width: 30vw;
+  }
+
+  .spons-box{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin: 3%;
+  }
+  .event-team{
+    display:flex;
+  }
+.flex-pics{
+  display: flex;
+  justify-content:space-between;
+}
+
+@media only screen and (max-width: 600px) {
+
+  .heading{
+    font-size: 180%;
+  }
+
+  .sponsor-pic-head{
+    width: 50vw;
+    margin-top: -15px;
+
+  }
+
+  .sponsor-pic{
+    width: 40vw;
+    height: 30vw;
+
+  }
+
+  .title-spons{
+    font-size: 150%;
+  }
+
+  .name2{
+    font-size: 120%;
+  }
+  .sponsors-list{
+    flex-direction: column;
+  }
+
+}
+
+@media only screen and (min-width: 600px) {
+
+  .heading{
+    font-size: 250%;
+  }
+
+  .title-spons {
+    font-size: 220%;
+
+  }
+
+  .sponsor-pic-head{
+    width: 30vw;
+  }
+
+  .sponsor-pic{
+    width: 25vw;
+    height: 10vw;
+  }
+  .name2{
+    font-size: 170%;
+  }
+
+ 
+
+}
+
+@media only screen and (min-width: 768px) {
+  .team-pic-head{
+    width: 35%;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .team-pic-head{
+    width: 20%;
+  }
+}
+

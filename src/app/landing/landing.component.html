@@ -1,0 +1,83 @@
+<section class="login" style="margin-top: -30%; width: 100%">
+  <div class="content">
+    <div class="caption">
+      <!-- <h2 style="margin-top: -40%;margin-left: 6%;color: white;font-weight: bolder;">IIT Bombay presents</h2> -->
+      <h2 style="
+          color: white;
+          font-weight: bolder;
+          font-family: 'Raleway';
+          font-size: 2.5em;
+        ">
+        IIT BOMBAY PRESENTS
+      </h2>
+    </div>
+    <div>
+      <img class="logo" src="./../../assets/AA-01 1.png" />
+    </div>
+    <div class="caption">
+      <!-- <h2 style="margin-left: 6%;color: white;font-weight: bolder;text-align: right;margin-right: 10%;">24-26th March</h2> -->
+      <h2 style="
+          color: white;
+          font-weight: bolder;
+          font-family: 'Raleway';
+          font-size: 2.5em;
+        ">
+        24-26th MARCH
+      </h2>
+    </div>
+  </div>
+</section>
+
+<section class="login1">
+  <div class="content_2">
+    <h1 class="about-us-caption">ABOUT US</h1>
+    <p class="about-us-content"><b>
+      “What we do in life, echoes in Eternity”<br />
+      <br />
+
+      Elude the labyrinth of urban life, inspire the warrior within at Aavhan
+      2023.
+      <br /><br />
+      <br />
+      Aavhan, IIT Bombay’s Premiere sport’s festival, is an opportunity to bring
+      your dreams, aspirations and desires to life. We believe sports prepare
+      you for life, because each game is life in miniature. We invite you to
+      join hands with us and embark on this journey of a lifetime, with lush
+      green grounds for a battlefield and raw passion as your weapon of choice.
+      The home contingent stands strong in anticipation of an invasion, but you
+      must breach our fortress first.
+    </b>
+    </p>
+
+  </div>
+  <div class="gallery_title">GALLERY</div>
+
+  <div class="contain-slider" style="background-color: transparent">
+    <!-- <div style="padding-bottom:10%"> -->
+    <!-- <mat-card-title class="test">Demo</mat-card-title> -->
+    <!-- <mat-card-content> -->
+    <swiper *ngIf="this.slides===1" class="swiper" [config]="config_1">
+
+      <div class="swiper-button-next"></div>
+      <div class="swiper-wrapper">
+        <img class="swiper-slide" *ngFor="let image of images" [src]="image" />
+      </div>
+      <div class="swiper-pagination"></div>
+
+      <div class="swiper-button-prev"></div>
+    </swiper>
+    <swiper *ngIf="this.slides===3" class="swiper" [config]="config_3">
+      <div class="swiper-button-next"></div>
+      <div class="swiper-wrapper">
+        <img class="swiper-slide" *ngFor="let image of images" [src]="image" />
+      </div>
+      <div class="swiper-pagination"></div>
+
+      <div class="swiper-button-prev"></div>
+    </swiper>
+    <!-- </mat-card-content> -->
+  </div>
+
+  <!-- <mat-card-actions> -->
+  <!-- </div> -->
+</section>

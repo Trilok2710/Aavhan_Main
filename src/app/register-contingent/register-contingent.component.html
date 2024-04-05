@@ -1,0 +1,182 @@
+
+<!-- <div class="container col-6">
+    <form [formGroup]="regForm" (ngSubmit)="onsubmit()">
+        <div class="mb-3">
+            <label for="exampleInputName" class="form-label">College Name</label>
+            <input type="text" class="form-control" id="exampleInputName" aria-describedby="emailHelp" formControlName="name">
+            <span style="color: red" *ngIf="name && name.invalid && name.touched">College Name should not be empty</span>
+        </div>
+
+        <div class="mb-3">
+            <label for="exampleInputName" class="form-label">Contingent Leader Name</label>
+            <input type="text" class="form-control" id="exampleInputName" aria-describedby="emailHelp" formControlName="leader">
+            <span style="color: red" *ngIf="leader && leader.invalid && leader.touched">Contigent Leader Name field should not be empty</span>
+        </div>
+
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Contingent Leader Email</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" formControlName="email">
+            <span style="color: red" *ngIf="email && email.touched && email.invalid
+            ">Enter correct email</span>
+        </div>
+
+        <div class="mb-3">
+            <label for="exampleInputPhone" class="form-label">Contingent Leader Phone No.</label>
+            <input type="text" class="form-control" id="exampleInputPhone" aria-describedby="emailHelp" formControlName="phone">
+            <span style="color: red" *ngIf="phone && phone.invalid && phone.touched">phone no. should be 10 digit</span>
+        </div>
+       
+        <button [disabled]="regForm.invalid" type="submit" class="btn btn-primary">Submit</button>
+        <br>
+        <button class="btn btn-primary mt-3" *ngIf="show">
+            <a routerLink="/add-member" class="add-member">Add Members</a>
+        </button>
+    </form>
+</div> -->
+
+<div class="container">
+  <div>
+    <form  class="form-box"[formGroup]="regForm"  >
+        <mat-stepper  #stepper >
+            
+            <mat-step >
+                <ng-template matStepLabel>Step-1</ng-template>
+                <h4 class="heading"> Fill General Details</h4>
+                <mat-form-field class="text-input" appearance="outline">
+                  <mat-label>Institute Name</mat-label>
+                  <input matInput placeholder="Institute Name" formControlName="college" required>
+                  <!-- <mat-error *ngIf="regForm.get('college')!.hasError('required')">
+                    Institute Name is <strong>required</strong>
+                  </mat-error> -->
+                </mat-form-field>
+                <!-- <label> Institute Name:</label>
+                <input class="text-input" formControlName="collegeName" required> -->
+              <br>
+                <mat-form-field class="text-input" appearance="outline">
+                  <mat-label>Participate as</mat-label>
+                  <mat-select [(ngModel)]="selectedValue" formControlName="type">
+                    <mat-option *ngFor="let type of types" [value]="type.value">
+                      {{type.viewValue}}
+                    </mat-option>
+                  </mat-select>
+                  <!-- <mat-error *ngIf="regForm.get('type')!.hasError('required')">
+                    Please select a valid option
+                  </mat-error> -->
+  
+                </mat-form-field>
+                <!-- <label>Participate as:</label>
+                <select class="text-input" [(ngModel)]="selectedValue" formControlName="type">
+                  <option *ngFor="let type of types" [value]="type.value">{{type.viewValue}}</option>
+                </select> -->
+                <div class="button_s1">
+                  <button class="button_1"  matStepperNext>NEXT</button>
+                </div>
+            </mat-step>
+            <mat-step>
+              <ng-template matStepLabel>Step-2</ng-template>
+              <h4 class="heading">Fill your personal details</h4>
+                <mat-form-field class="text-input" appearance="outline">
+                  <mat-label>Name</mat-label>
+                  <input matInput formControlName="name" placeholder="Name" required>
+                  <!-- <mat-error *ngIf="regForm.get('name')!.hasError('required')">
+                    Name is <strong>required</strong>
+                  </mat-error> -->
+                </mat-form-field>
+                <br>
+                <mat-form-field class="text-input" appearance="outline">
+                  <mat-label>Email ID</mat-label>
+                  <input matInput formControlName="email" placeholder="Enter your email-id" required>
+                  <mat-error *ngIf="regForm.get('email')!.hasError('email')">
+                    Please enter a valid email ID
+                  </mat-error>
+                  <!-- <mat-error *ngIf="regForm.get('contingentLeaderEmail')!.hasError('required')">
+                    Email ID is <strong>required</strong>
+                  </mat-error>
+                  <mat-error *ngIf="regForm.get('contingentLeaderEmail')!.hasError('email')">
+                    Please enter a valid email ID
+                  </mat-error> -->
+                </mat-form-field>
+                <br>
+                <mat-form-field class="text-input" appearance="outline">
+                  <mat-label>Phone Number</mat-label>
+                  <input matInput formControlName="phoneNo" placeholder="Enter Phone Number" required>
+                  <mat-error *ngIf="regForm.get('phoneNo')!.hasError('pattern')">
+                    Please enter a valid phone number
+                  </mat-error>
+                  <!-- <mat-error *ngIf="regForm.get('contingentLeaderPhoneNo')!.hasError('required')">
+                    Phone Number is <strong>required</strong>
+                  </mat-error>
+                  <mat-error *ngIf="regForm.get('contingentLeaderPhoneNo')!.hasError('minLength')">
+                    Please enter a valid phone number
+                  </mat-error> -->
+                </mat-form-field>
+                <br>
+                <mat-form-field class="text-input" appearance="outline">
+                  <mat-label>Password</mat-label>
+                  <input matInput type="password" formControlName="password" placeholder="Create a password" required>
+                  <mat-error *ngIf="regForm.get('password')!.hasError('minLength')">
+                    Password must be atleast 6 character long
+                  </mat-error>
+                </mat-form-field>
+                <br>
+                <mat-form-field class="text-input" appearance="outline">
+                  <mat-label>Confirm Password</mat-label>
+                  <input matInput type="password" formControlName="confirmPass" placeholder="Re-enter password" [errorStateMatcher]="matcher" required>
+                  <!-- <mat-error *ngIf="regForm.get('contingentLeaderPhoneNo')!.hasError('required')">
+                    Phone Number is <strong>required</strong>
+                  </mat-error>
+                  <mat-error *ngIf="regForm.get('contingentLeaderPhoneNo')!.hasError('minLength')">
+                    Please enter a valid phone number
+                  </mat-error> -->
+                  <mat-error *ngIf="regForm.getError('mismatch')">
+                    Password does not match
+                  </mat-error> 
+                </mat-form-field>
+                <br>
+                <mat-form-field class="text-input" appearance="outline">
+                  <mat-label>Alternate Number</mat-label>
+                  <input matInput formControlName="altNo" placeholder="Enter Alternate Number here" >
+                </mat-form-field>
+                <div class="button_s2">
+                  <button class="button_1"  matStepperPrevious>BACK</button>
+                  <button class="button_1"  matStepperNext>NEXT</button>
+                </div>
+            </mat-step>
+            <mat-step>
+              <ng-template matStepLabel>Step-3</ng-template>
+              <h4 class="heading">Fill College Details</h4>
+              <mat-form-field class="text-input" appearance="outline">
+                <mat-label>College Address</mat-label>
+                <textarea matInput formControlName="address" placeholder="Enter College Address" required ></textarea>
+                <!-- <mat-error *ngIf="regForm.get('address')!.hasError('required')">
+                  College Address is <strong>required</strong>
+                </mat-error> -->
+              </mat-form-field>
+              <br>
+              <mat-form-field class="text-input" appearance="outline">
+                <mat-label>Pincode</mat-label>
+                <input matInput formControlName="pincode" placeholder="Enter Pincode" required>
+              </mat-form-field>
+              <br>
+              <mat-form-field class="text-input" appearance="outline">
+                <mat-label>City</mat-label>
+                <input matInput formControlName="city" placeholder="Enter College City" required>
+              </mat-form-field>
+              <br>
+              <mat-form-field class="text-input" appearance="outline">
+                <mat-label>State</mat-label>
+                <input matInput formControlName="state" placeholder="Enter College State" required>
+              </mat-form-field>
+              <!-- <div class="err-msg" *ngIf='errorMsg!=""'>
+                {{errorMsg}}
+              </div> -->
+              <!-- <button mat-button (click)="openDialog()">Open dialog</button> -->
+              <div class="button_s2">
+                <button class="button_1"  matStepperPrevious>BACK</button>
+                <button class="button_1" [disabled]="!regForm.valid" (click)="onSubmit()">SUBMIT</button>
+              </div>
+            </mat-step>
+        </mat-stepper>
+     </form>
+  </div>
+</div>

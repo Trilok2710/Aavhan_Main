@@ -1,0 +1,5 @@
+<div *ngIf="characters$ | async as characters">
+<div *ngFor = 'let char of characters'>
+    <p>{{char.name}}</p>
+</div>
+</div>

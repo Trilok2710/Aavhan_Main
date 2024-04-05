@@ -1,0 +1,31 @@
+<div class="container">
+      <form class="form-box" [formGroup]="loginForm" >
+          <div class="heading">Login</div>
+            <mat-form-field class="text-input" appearance="outline">
+                <mat-label>Login ID</mat-label>
+                <input  matInput placeholder="Enter Email ID or Phone Number" formControlName="username" required>
+            </mat-form-field>
+
+                <mat-form-field class="text-input" appearance="outline">
+                    <mat-label>Password</mat-label>
+                    <input  matInput placeholder="Enter Password" formControlName="password" type="password" required>
+                </mat-form-field>
+                <mat-form-field class="text-input" appearance="outline">
+                    <mat-label>Login as</mat-label>
+                        <mat-select [(ngModel)]="selectedValue" placeholder="Select registration type" formControlName="type">
+                            <mat-option *ngFor="let type of types" [value]="type.value">
+                              {{type.viewValue}}
+                            </mat-option>
+                        </mat-select>
+                </mat-form-field>
+                <div class="forgot"><a [routerLink]="['/forgot']">Forgot password?</a></div>
+               
+            <div class="button_s1">
+                <button class="button_1" [disabled]="!loginForm.valid" (click)="onSubmit()">LOGIN</button>
+            </div>
+            <div class="register">Don't have an account? <a [routerLink]="['/register-contingent']">Register Now</a></div>
+                
+
+       </form>
+
+  </div>

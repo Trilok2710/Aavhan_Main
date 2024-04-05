@@ -1,0 +1,121 @@
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  background-color: radial-gradient(#000000 , white);
+}
+.bottom-center {
+  position: absolute;
+  bottom: 0%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+}
+
+.first::after {
+  content: '';
+  position: absolute;
+  left: 0; top: 5%;
+  width: 100%; height: 100%;
+  background: linear-gradient(180deg, rgba(1, 4, 68, 0) 65.61%, #000005 86.74%);
+
+}
+
+.btn-reg{
+  background-color: rgba(140, 40, 34, 1) ;
+  color:white;
+  padding: 15px 20px;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  font-weight: 600;
+  z-index: 3;
+  /* text-transform: uppercase; */
+}
+.second{
+  background-image: url("./../../assets/event-2.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom;
+
+}
+.card-top{
+  width: 80%;
+  /* box-shadow:skyblue; */
+  /* margin-left: 10%;*/
+  margin-top: 10%; 
+  background: transparent;
+  /* border-right-color: black; */
+}
+
+.card-img-top{
+  border-radius: 15px;
+}
+
+@media only screen and (max-width: 600px) {
+  .head1{
+    font-size: 30px;
+    /* text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25); */
+  }
+  .head2{
+    font-size: 55px;
+    font-weight:700 ;
+    margin-top: -10px;
+    /* text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25); */
+  }
+  .btn-reg {
+    margin-top: 20px;
+    font-size: 25px;
+    width: 70%;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .head1{
+    font-size: 45px;
+  }
+  .head2{
+    margin-top: 30px;
+    font-size: 75px;
+    font-weight:700 ;
+  }
+  .btn-reg{
+    margin-top: 50px;
+    font-size: 40px;
+    width: 50%;
+
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  /* .head1{
+    font-size: ;
+    font-weight: ;
+  }
+  /* .head2{
+    font-size: ;
+    font-weight: ;
+  } */ 
+  .btn-reg{
+    margin-top: 50px;
+    font-size: 30px;
+    width: 50%;
+    
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .form-box {
+      width: 500px;
+  }
+
+  .btn-reg{
+    margin-top: 50px;
+    font-size: 30px;
+    width: 30%;
+    
+  }
+}
+

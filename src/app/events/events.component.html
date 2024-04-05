@@ -1,0 +1,60 @@
+<section class="event">
+  <div class="content" >
+    <div class="first">
+      <img src="./../../assets/event-bg-overlay.png" alt="" style="width:100%; height: 100vh;opacity:0.9;object-position: bottom;object-fit: cover;">
+      <div class="centered" style="color: white;font-weight: bolder;">
+        <h1 class="head1 text-center" style="font-family: 'Gabriela';" >AAVHAN 2023</h1>
+        <h2 style="font-family: 'Raleway',sans-serif ;" class="text-center head2">EVENTS</h2>
+        <!-- <div style="font-family: 'Raleway',sans-serif ;" class="btn-reg btn" >
+          View Details
+      </div> -->
+    </div>
+    <div class="bottom-center"><a href="./#eventdisplay"><img src="./../../assets/down-arrow.png" alt=""></a></div>
+  </div>
+  <div class="second">
+    <!-- <img src="./../../assets/event-2.png" alt="" style="width:100%;"> -->
+    <div class="container">
+      <a id="eventdisplay">
+      </a>
+
+      <div class="row row-cols-1 row-cols-md-3 row-cols-sm-2 g-4" style="padding: 100px 50px;">
+        <div *ngFor="let event of  Events">
+          <div class="col">
+            <a class="card-top" aria-current="page" routerLink="/events/{{event._id}}" (click)="onActivate()">
+              <img src="./../../assets/events/{{event.images}}" class="card-img-top" alt="...">
+              <!-- <div class="card-body">
+                    <h5 class="card-title">MA-109</h5>
+                    <p class="card-text">
+                    <h6>Calculus I.</h6>
+                    <br>
+                    <h6> [Autumn Semester]</h6>
+
+                    <a href="MA109.html" class="btn btn-primary stretched-link">More info</a>
+                </div> -->
+            </a>
+          </div>
+        </div>
+
+        <!-- <div class="col">
+
+          <a class="card" aria-current="page" routerLink="/events/id" >
+            <img src="./../../assets/Rectangle.png" class="card-img-top" alt="...">
+             <div class="card-body">
+                    <h5 class="card-title">MA-109</h5>
+                    <p class="card-text">
+                    <h6>Calculus I.</h6>
+                    <br>
+                    <h6> [Autumn Semester]</h6>
+
+                    <a href="MA109.html" class="btn btn-primary stretched-link">More info</a>-->
+
+        
+        
+       
+
+
+      </div>
+    </div> 
+  </div>
+  </div>
+</section>
